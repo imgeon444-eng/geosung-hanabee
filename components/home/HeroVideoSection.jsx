@@ -127,24 +127,28 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] lg:w-[700px] h-[300px] sm:h-[350px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
         {/* 🌟 메인 헤드라인 */}
-        <div className="max-w-4xl mx-auto relative z-10 w-full text-center my-auto space-y-4 sm:space-y-6 pt-4">
+        <div className="max-w-4xl mx-auto relative z-10 w-full text-center my-auto space-y-4 sm:space-y-6 pt-2 sm:pt-4">
           
-          {/* 상단 서브 뱃지 */}
-          <div className="inline-flex items-center gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#071911]/85 border border-emerald-400/40 text-emerald-300 text-[11px] sm:text-xs md:text-sm font-extrabold tracking-wide backdrop-blur-md shadow-[0_4px_25px_rgba(0,0,0,0.6)] animate-fade-in-up">
-            <span className="flex h-2 w-2 sm:h-2.5 sm:w-2.5 relative">
+          {/* 상단 서브 뱃지 (모바일 한 줄 유지) */}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#071911]/90 border border-emerald-400/40 text-emerald-300 text-[11px] sm:text-xs md:text-sm font-extrabold tracking-tight backdrop-blur-md shadow-[0_4px_25px_rgba(0,0,0,0.6)] animate-fade-in-up whitespace-nowrap">
+            <span className="flex h-2 w-2 sm:h-2.5 sm:w-2.5 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-amber-400"></span>
             </span>
-            <span>농업회사법인 (합)거성 · 국내 1위 화분매개 수정벌</span>
+            <span><span className="hidden xs:inline">농업회사법인 (합)거성 · </span>국내 1위 화분매개 수정벌</span>
           </div>
 
-          {/* 메인 타이틀 (모바일/PC 반응형 최적화) */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.18] sm:leading-[1.12] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] animate-fade-in-up">
-            고품질 과실 수확의<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-200 drop-shadow-[0_0_45px_rgba(245,158,11,0.6)]">
+          {/* 메인 타이틀 (3단 완벽 고정 블록 - 어떤 기기에서도 절대 단어 쪼개짐 없음) */}
+          <h1 className="text-[28px] xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.2] sm:leading-[1.15] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] animate-fade-in-up">
+            <span className="block">
+              고품질 과실 수확의
+            </span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-200 drop-shadow-[0_0_45px_rgba(245,158,11,0.6)] mt-1 sm:mt-1.5">
               가장 확실한 파트너
-            </span>{' '}
-            <span className="text-emerald-400 inline-block">거성 하나벌</span>
+            </span>
+            <span className="block text-emerald-400 mt-1 sm:mt-2">
+              거성 하나벌
+            </span>
           </h1>
 
           {/* 서브 카피 */}

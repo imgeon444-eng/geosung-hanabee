@@ -25,24 +25,24 @@ export default function Navbar({ onOpenConsultation }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* 브랜드 로고 */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-emerald-600 p-0.5 shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+        {/* 브랜드 로고 (모바일/PC 절대 줄바꿈 깨짐 방지) */}
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-emerald-600 p-0.5 shadow-[0_0_20px_rgba(245,158,11,0.4)] group-hover:scale-105 transition-transform duration-300 flex items-center justify-center shrink-0">
             <div className="w-full h-full bg-[#071911] rounded-[14px] flex items-center justify-center">
-              <span className="text-xl">🐝</span>
+              <span className="text-lg sm:text-xl">🐝</span>
             </div>
           </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2">
-              <span className="font-black tracking-tight text-white text-xl sm:text-2xl leading-none">
+          <div className="flex flex-col whitespace-nowrap">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="font-black tracking-tight text-white text-lg sm:text-2xl leading-none">
                 하나벌
               </span>
-              <span className="text-[10px] bg-amber-400/20 border border-amber-400/40 text-amber-300 font-extrabold px-1.5 py-0.5 rounded-md">
+              <span className="text-[9px] sm:text-[10px] bg-amber-400/20 border border-amber-400/40 text-amber-300 font-extrabold px-1.5 py-0.5 rounded-md leading-none">
                 국내 1위
               </span>
             </div>
-            <span className="text-[10px] text-emerald-300/80 font-bold tracking-wider mt-0.5">
-              농업회사법인 (합)거성 · 26년 역사
+            <span className="text-[9px] sm:text-[10px] text-emerald-300/80 font-bold tracking-tight mt-0.5">
+              <span className="hidden xs:inline">농업회사법인 </span>(합)거성 · 26년 역사
             </span>
           </div>
         </Link>
