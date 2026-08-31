@@ -1,0 +1,7 @@
+# 거성하나벌 & 전체 AI 에이전트 절대 개발 지침
+
+## [CRITICAL] 깃허브 인증 및 자격 증명 절대 보호 규칙
+1. `cmdkey /delete` 등 Windows 자격 증명 삭제 명령어 실행을 영구히 금지한다.
+2. 회사의 표준 GitHub 계정은 `imgeon444-eng`이다.
+3. 모든 저장소 연동은 `https://github.com/imgeon444-eng/[레포명].git`을 사용한다.
+4. Git 인증 문제 발생 시 기존 인증을 지우지 않고 원격 저장소 URL 또는 브랜치 상태만 점검한다.
