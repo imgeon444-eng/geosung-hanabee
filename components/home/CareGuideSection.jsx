@@ -27,12 +27,12 @@ export default function CareGuideSection({ onOpenConsultation }) {
           </p>
         </div>
 
-        {/* 서브 탭 네비게이션 */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-[#05140d] p-1.5 rounded-2xl border border-emerald-500/30 gap-1 sm:gap-2">
+        {/* 서브 탭 네비게이션 (모바일 가로 스크롤 대응) */}
+        <div className="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar mb-8 sm:mb-12 pb-1">
+          <div className="inline-flex bg-[#05140d] p-1 sm:p-1.5 rounded-2xl border border-emerald-500/30 gap-1 sm:gap-2 shrink-0">
             <button
               onClick={() => setActiveTab('steps')}
-              className={`px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              className={`px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all whitespace-nowrap ${
                 activeTab === 'steps'
                   ? 'bg-amber-400 text-slate-950 shadow-md font-black'
                   : 'text-slate-300 hover:text-white hover:bg-emerald-500/10'
@@ -42,7 +42,7 @@ export default function CareGuideSection({ onOpenConsultation }) {
             </button>
             <button
               onClick={() => setActiveTab('environment')}
-              className={`px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              className={`px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all whitespace-nowrap ${
                 activeTab === 'environment'
                   ? 'bg-amber-400 text-slate-950 shadow-md font-black'
                   : 'text-slate-300 hover:text-white hover:bg-emerald-500/10'
@@ -52,7 +52,7 @@ export default function CareGuideSection({ onOpenConsultation }) {
             </button>
             <button
               onClick={() => setActiveTab('pesticide')}
-              className={`px-4 sm:px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all ${
+              className={`px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all whitespace-nowrap ${
                 activeTab === 'pesticide'
                   ? 'bg-amber-400 text-slate-950 shadow-md font-black'
                   : 'text-slate-300 hover:text-white hover:bg-emerald-500/10'

@@ -88,9 +88,9 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
     <section className="relative w-full overflow-hidden bg-[#07130E]">
       
       {/* 🎬 1. 최상단: 시원하고 선명한 풀스크린 시네마틱 히어로 */}
-      <div className="relative min-h-[92vh] flex flex-col items-center justify-between pt-32 pb-10 px-4 sm:px-6 lg:px-8">
+      <div className="relative min-h-[90vh] sm:min-h-[92vh] flex flex-col items-center justify-between pt-28 sm:pt-32 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-8">
         
-        {/* 고화질 비디오 배경 (선명도 대폭 상향: opacity 88%, 부드러운 로드) */}
+        {/* 고화질 비디오 배경 */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-[#06150e]">
           <video
             ref={videoRef}
@@ -108,7 +108,6 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
             <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
           
-          {/* 가독성을 살려주는 시네마틱 소프트 비네팅 (영상 색감 최대한 보존) */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#07130E]/80 via-transparent to-[#07130E] pointer-events-none"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#07130E] via-[#07130E]/30 to-transparent pointer-events-none"></div>
           <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
@@ -119,55 +118,55 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
           type="button"
           onClick={toggleMute}
           aria-label={isMuted ? "소리 켜기" : "소리 끄기"}
-          className="absolute top-28 right-6 z-20 hidden md:flex items-center gap-2 bg-black/60 hover:bg-black/85 text-white/90 border border-emerald-500/30 px-4 py-2 rounded-full text-xs font-bold backdrop-blur-md transition-all shadow-lg hover:scale-105"
+          className="absolute top-24 sm:top-28 right-4 sm:right-6 z-20 flex items-center gap-1.5 bg-black/65 hover:bg-black/85 text-white/90 border border-emerald-500/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold backdrop-blur-md transition-all shadow-lg active:scale-95"
         >
           <span>{isMuted ? '🔇 소리 켜기' : '🔊 소리 끄기'}</span>
         </button>
 
         {/* 🔮 중앙 앰비언트 글로우 */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-500/10 rounded-full blur-[160px] pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] lg:w-[700px] h-[300px] sm:h-[350px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
-        {/* 🌟 메인 헤드라인 (중앙 집중형으로 시야를 넓고 시원하게 연출) */}
-        <div className="max-w-5xl mx-auto relative z-10 w-full text-center my-auto space-y-6">
+        {/* 🌟 메인 헤드라인 */}
+        <div className="max-w-4xl mx-auto relative z-10 w-full text-center my-auto space-y-4 sm:space-y-6 pt-4">
           
           {/* 상단 서브 뱃지 */}
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#071911]/85 border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-extrabold tracking-wide backdrop-blur-md shadow-[0_4px_25px_rgba(0,0,0,0.6)] animate-fade-in-up">
-            <span className="flex h-2.5 w-2.5 relative">
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#071911]/85 border border-emerald-400/40 text-emerald-300 text-[11px] sm:text-xs md:text-sm font-extrabold tracking-wide backdrop-blur-md shadow-[0_4px_25px_rgba(0,0,0,0.6)] animate-fade-in-up">
+            <span className="flex h-2 w-2 sm:h-2.5 sm:w-2.5 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-amber-400"></span>
             </span>
             <span>농업회사법인 (합)거성 · 국내 1위 화분매개 수정벌</span>
           </div>
 
-          {/* 메인 타이틀 */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] animate-fade-in-up">
+          {/* 메인 타이틀 (모바일/PC 반응형 최적화) */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.18] sm:leading-[1.12] drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] animate-fade-in-up">
             고품질 과실 수확의<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-200 drop-shadow-[0_0_45px_rgba(245,158,11,0.6)]">
               가장 확실한 파트너
             </span>{' '}
-            <span className="text-emerald-400">거성 하나벌</span>
+            <span className="text-emerald-400 inline-block">거성 하나벌</span>
           </h1>
 
-          {/* 깔끔한 서브 카피 */}
-          <p className="text-slate-100 text-base sm:text-xl md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto break-keep drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] px-4">
+          {/* 서브 카피 */}
+          <p className="text-slate-200 text-xs sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl mx-auto break-keep drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] px-2 sm:px-4">
             국내 시장 <strong className="text-amber-300 font-extrabold">점유율 60% 1위</strong> · 
             26년 연구 노하우의 활력 넘치는 <strong className="text-white font-extrabold">서양 뒤영벌</strong>로 
             착과율 극대화와 농가 인건비 80% 절감을 실현합니다.
           </p>
 
-          {/* 간결하고 직관적인 핵심 버튼 그룹 */}
-          <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
+          {/* 핵심 버튼 그룹 (모바일에서 자연스러운 너비와 패딩) */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3.5 pt-2 sm:pt-4 w-full max-w-md sm:max-w-none mx-auto">
             <button
               onClick={onOpenConsultation}
-              className="h-14 sm:h-16 px-8 sm:px-10 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-black text-base sm:text-lg shadow-[0_0_40px_rgba(245,158,11,0.6)] hover:scale-105 active:scale-95 transition-all flex items-center gap-2.5"
+              className="w-full sm:w-auto h-12 sm:h-15 px-6 sm:px-8 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-black text-sm sm:text-base shadow-[0_0_35px_rgba(245,158,11,0.5)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
             >
               <span>🐝 1:1 맞춤 상담 예약</span>
-              <span className="text-xl">→</span>
+              <span className="text-lg">→</span>
             </button>
 
             <a
               href="#quick-dock"
-              className="h-14 sm:h-16 px-7 rounded-2xl bg-black/60 hover:bg-black/80 border border-emerald-400/40 text-emerald-300 hover:text-white font-bold text-sm sm:text-base transition-all flex items-center gap-2 backdrop-blur-md shadow-lg"
+              className="w-full sm:w-auto h-12 sm:h-15 px-5 sm:px-7 rounded-2xl bg-black/60 hover:bg-black/80 border border-emerald-400/40 text-emerald-300 hover:text-white font-bold text-xs sm:text-sm sm:text-base transition-all flex items-center justify-center gap-2 backdrop-blur-md shadow-lg"
             >
               <span>⚡ 빠른 견적 & 핵심 정보</span>
               <span className="text-amber-400">↓</span>
@@ -175,7 +174,7 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
 
             <a
               href="tel:0552944446"
-              className="h-14 sm:h-16 px-7 rounded-2xl bg-[#092217]/80 hover:bg-[#0d2f21] border border-white/20 text-white font-bold text-sm sm:text-base transition-all flex items-center gap-2 backdrop-blur-md shadow-lg"
+              className="w-full sm:w-auto h-12 sm:h-15 px-5 sm:px-7 rounded-2xl bg-[#092217]/80 hover:bg-[#0d2f21] border border-white/20 text-white font-bold text-xs sm:text-sm sm:text-base transition-all flex items-center justify-center gap-2 backdrop-blur-md shadow-lg"
             >
               <span>📞 직통 055-294-4446</span>
             </a>
@@ -184,10 +183,10 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
         </div>
 
         {/* ⬇️ 하단 스크롤 안내 인디케이터 */}
-        <div className="relative z-10 pt-4 text-center animate-bounce">
-          <a href="#quick-dock" className="inline-flex flex-col items-center gap-1 text-slate-300/80 hover:text-amber-300 text-xs font-bold transition-colors">
+        <div className="relative z-10 pt-3 sm:pt-4 text-center animate-bounce">
+          <a href="#quick-dock" className="inline-flex flex-col items-center gap-0.5 sm:gap-1 text-slate-300/80 hover:text-amber-300 text-[11px] sm:text-xs font-bold transition-colors">
             <span>아래로 스크롤하여 빠른 예약 & 정보 확인</span>
-            <svg className="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </a>
@@ -195,14 +194,14 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
 
       </div>
 
-      {/* 🚀 2. 하단 와이드 탭 & 스마트 액션 도크 (넓고 시원하게 정돈된 하단 배치) */}
-      <div id="quick-dock" className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-4">
+      {/* 🚀 2. 하단 와이드 탭 & 스마트 액션 도크 (모바일 가로 스크롤 & 최적 패딩) */}
+      <div id="quick-dock" className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 pt-4">
         
-        {/* 탭 네비게이션 버튼 바 */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6">
+        {/* 탭 네비게이션 버튼 바 (모바일 가로 스크롤 지원) */}
+        <div className="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar gap-2 sm:gap-3 mb-5 sm:mb-6 pb-1">
           <button
             onClick={() => setActiveTab('reserve')}
-            className={`px-5 sm:px-7 py-3 rounded-2xl font-black text-sm sm:text-base transition-all flex items-center gap-2 shadow-md ${
+            className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl font-black text-xs sm:text-sm md:text-base transition-all flex items-center gap-1.5 shrink-0 shadow-md ${
               activeTab === 'reserve'
                 ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-[0_0_25px_rgba(245,158,11,0.4)] scale-105'
                 : 'bg-[#0a2318]/80 text-slate-300 hover:text-white border border-emerald-500/20 backdrop-blur-md'
@@ -213,7 +212,7 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
 
           <button
             onClick={() => setActiveTab('stats')}
-            className={`px-5 sm:px-7 py-3 rounded-2xl font-black text-sm sm:text-base transition-all flex items-center gap-2 shadow-md ${
+            className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl font-black text-xs sm:text-sm md:text-base transition-all flex items-center gap-1.5 shrink-0 shadow-md ${
               activeTab === 'stats'
                 ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-[0_0_25px_rgba(245,158,11,0.4)] scale-105'
                 : 'bg-[#0a2318]/80 text-slate-300 hover:text-white border border-emerald-500/20 backdrop-blur-md'
@@ -224,7 +223,7 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
 
           <button
             onClick={() => setActiveTab('trust')}
-            className={`px-5 sm:px-7 py-3 rounded-2xl font-black text-sm sm:text-base transition-all flex items-center gap-2 shadow-md ${
+            className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl font-black text-xs sm:text-sm md:text-base transition-all flex items-center gap-1.5 shrink-0 shadow-md ${
               activeTab === 'trust'
                 ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-[0_0_25px_rgba(245,158,11,0.4)] scale-105'
                 : 'bg-[#0a2318]/80 text-slate-300 hover:text-white border border-emerald-500/20 backdrop-blur-md'
@@ -235,7 +234,7 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
         </div>
 
         {/* 탭 내용 영역 */}
-        <div className="bg-[#092217]/90 backdrop-blur-2xl border-2 border-emerald-500/30 rounded-3xl p-6 sm:p-10 shadow-[0_25px_70px_rgba(0,0,0,0.8)]">
+        <div className="bg-[#092217]/90 backdrop-blur-2xl border-2 border-emerald-500/30 rounded-3xl p-5 sm:p-8 lg:p-10 shadow-[0_25px_70px_rgba(0,0,0,0.8)]">
           
           {/* TAB 1: 빠른 상담/예약 폼 */}
           {activeTab === 'reserve' && (
