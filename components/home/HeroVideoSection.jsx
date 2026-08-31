@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { db } from '../../lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen }) {
   const [activeTab, setActiveTab] = useState('reserve'); // reserve | stats | trust
@@ -36,9 +38,23 @@ export default function HeroVideoSection({ onOpenConsultation, onPrefillAndOpen 
         createdAt: new Date().toISOString(),
       };
 
+      // 1. LocalStorage 백업
       const existing = JSON.parse(localStorage.getItem('hanabee_leads') || '[]');
       localStorage.setItem('hanabee_leads', JSON.stringify([newLead, ...existing]));
 
+      // 2. Firebase Firestore 실시간 클라우드 DB 저장
+      try {
+        if (db) {
+          await addDoc(collection(db, 'hanabee_leads'), {
+            ...newLead,
+            timestamp: serverTimestamp(),
+          });
+        }
+      } catch (dbErr) {
+        console.warn('Firestore direct write', dbErr);
+      }
+
+      // 3. API 백엔드 호출 (이메일 발송 등)
       try {
         await fetch('/api/hanabee-consultation', {
           method: 'POST',
