@@ -1,7 +1,11 @@
-# 거성하나벌 & 전체 AI 에이전트 절대 개발 지침
+# [거성하나벌 프로젝트 전용 AI 지침]
+# C:\Users\USER\.cursorrules (전역) 및 아래 규칙을 최우선 준수할 것.
 
-## [CRITICAL] 깃허브 인증 및 자격 증명 절대 보호 규칙
-1. `cmdkey /delete` 등 Windows 자격 증명 삭제 명령어 실행을 영구히 금지한다.
-2. 회사의 표준 GitHub 계정은 `imgeon444-eng`이다.
-3. 모든 저장소 연동은 `https://github.com/imgeon444-eng/[레포명].git`을 사용한다.
-4. Git 인증 문제 발생 시 기존 인증을 지우지 않고 원격 저장소 URL 또는 브랜치 상태만 점검한다.
+1. GitHub 인증 정보 절대 보존 (`cmdkey /delete` 금지, `imgeon444-eng` 계정 고정).
+2. Firebase 프로젝트 임의 연결 금지 (사전 질문 후 진행).
+3. 무파괴 개발 프로토콜 (Anti-Breaking Workflow v2.0) 준수:
+   - Phase 1: 현장 조사
+   - Phase 2: 구현 설계서 제시 & 승인 대기
+   - Phase 3: 빨간 펜 피드백 및 명시적 승인 전 코드 수정 금지
+   - Phase 4: 통제된 시공 및 3중 회귀 검증
+4. 4대 금기: 벽 안 보고 못 박기, 독단적 공사 시작, 과잉 엔지니어링, 오염된 덧대기.
